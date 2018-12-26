@@ -1,0 +1,21 @@
+nav {
+  display: flex;
+  padding: 5px;
+}
+nav div {
+  display: flex;
+  align-items: center;
+}
+nav p {
+  font-size: 2em;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav span {
+  margin: 0 0.5em;
+  font-weight: bold;
+}

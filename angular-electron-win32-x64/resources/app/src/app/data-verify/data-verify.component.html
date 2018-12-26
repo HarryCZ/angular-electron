@@ -1,0 +1,21 @@
+<app-navigation step="2"></app-navigation>
+<button id="mainButton" class="bg-blue color-grey" (click)="validationComplete()">{{countBonuses}}</button>
+<table>
+  <tr class="bg-blue color-grey">
+    <th>{{labelName}}</th>
+    <th>{{labelAccount}}</th>
+    <th>{{labelInvoiced}}</th>
+    <th>{{labelMargin}}</th>
+    <th>{{labelBonus}}</th>
+  </tr>
+  <tr class="color-blue" *ngFor="let customer of customers; let i = index">
+    <td>{{customer.name}}</td>
+    <td>{{customer.account}}</td>
+    <td class="right">{{customer.getInvoicedTotal() | currency : 'CZK' : 'symbol' : '1.0-2'}}</td>
+    <td class="right">{{customer.getMarginTotal()/100 | percent : '1.2-3' }}</td>
+    <td class="right" [ngClass]="{'pointer': editing != 1}">
+      <div *ngIf="editing != i" (click)="editBonus(i)">{{customer.bonus | currency : 'CZK' : 'symbol' : '1.0-2'}}</div>
+      <input type="number" step="100" *ngIf="editing == i" [(ngModel)]="customer.bonus"><button *ngIf="editing == i" (click)="saveEdit(customer)">V</button>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,18 @@
+<app-navigation step="3"></app-navigation>
+<table>
+  <tr class="bg-blue color-grey">
+    <td>{{labelAccount}}</td>
+    <td>{{labelBonus}}</td>
+    <td *ngFor="let nominal of labelsNominals">{{nominal}}</td>
+  </tr>
+  <tr class="color-blue" *ngFor="let account of accountBonuses">
+    <td>{{account.name}}</td>
+    <td>{{account.totalBonuses}}</td>
+    <td *ngFor="let nominal of account.totalDenomination">{{nominal.count}}</td>
+  </tr>
+  <tr class="bg-green color-white">
+    <td>TOTAL</td>
+    <td>{{totalBonus}}</td>
+    <td *ngFor="let nominal of totalNominals">{{nominal.count}}</td>
+  </tr>
+</table>

@@ -1,0 +1,14 @@
+<app-navigation step="1"></app-navigation>
+<app-message-box [message]="msgBoxMessage" [level]="msgBoxLevel"></app-message-box>
+<button type="button" class="bg-blue color-grey" (click)="uploadDocuments()">Upload File</button>
+<form>
+  <span>
+    <label for="bonusData">{{labelBonusData}}</label>
+    <input id="bonusData" type="file" accept="text/csv" (change)="dataFileChanged($event)">
+  </span>
+  <span>
+    <label for="customerList">{{labelCustomerList}}</label>
+    <input id="customerList" type="file" accept="text/csv" (change)="customerListFileChanged($event)">
+  </span>
+</form>
+

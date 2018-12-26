@@ -1,0 +1,22 @@
+<app-navigation step="0"></app-navigation>
+
+<div id="buttonZone">
+  <button  class="bg-blue color-grey" (click)="startImport()">Start</button>
+</div>
+<div id="main">
+  <ul>
+    <li>
+      <input id="period1" type="radio" name="timePeriodInput" [(ngModel)]="timePeriod" value="1">
+      <label for="period1">{{labelsPeriod[0]}}</label>
+    </li>
+    <li>
+      <input id="period2" type="radio" name="timePeriodInput" [(ngModel)]="timePeriod" value="2">
+      <label for="period2">{{labelsPeriod[1]}}</label>
+    </li>
+    <li>
+      <input id="period3" type="radio" name="timePeriodInput" [(ngModel)]="timePeriod" value="3">
+      <label for="period3">{{labelsPeriod[2]}}</label>
+    </li>
+  </ul>
+</div>
+

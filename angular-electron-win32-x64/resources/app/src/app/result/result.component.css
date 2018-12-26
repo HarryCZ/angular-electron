@@ -1,0 +1,18 @@
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  td {
+    border: 1px solid var(--color-green);
+  }
+  tr:hover {
+    background-color: var(--color-grey);
+  }
+  th {
+    border: 1px solid var(--color-green);
+  }
+  .right {
+    text-align: right;
+  }
+  

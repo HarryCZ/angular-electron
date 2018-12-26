@@ -1,0 +1,31 @@
+#mainButton {
+  width: 100%;
+  border: 0;
+  font-size: 1.5em;
+  padding: 10px;
+  cursor: pointer;
+}
+#mainButton:hover {
+  background-color: var(--color-grey);
+  color: var(--color-blue);
+}
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+td {
+  border: 1px solid var(--color-green);
+}
+tr:hover {
+  background-color: var(--color-grey);
+}
+th {
+  border: 1px solid var(--color-green);
+}
+.right {
+  text-align: right;
+}
+.pointer {
+  cursor: pointer;
+}
