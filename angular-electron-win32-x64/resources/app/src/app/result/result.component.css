@@ -16,3 +16,17 @@ table {
     text-align: right;
   }
   
+  button {
+    width: 33%;
+    border: 0;
+    font-size: 1.5em;
+    padding: 10px;
+    cursor: pointer;
+  }
+  button:nth-child(3) {
+      margin: 0 0.5%;
+  }
+  button:hover {
+    background-color: var(--color-grey);
+    color: var(--color-blue);
+  }

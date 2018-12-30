@@ -1,6 +1,6 @@
 <nav class="bg-green color-white">
   <div *ngFor="let breadcrumb of breadcrumbs; let i = index">
-    <a class="color-white" *ngIf="i < step" [href]="breadcrumb.link">{{breadcrumb.caption}}</a>
+    <a class="color-white" *ngIf="i < step" [routerLink]="breadcrumb.link">{{breadcrumb.caption}}</a>
     <span *ngIf="i < step">></span>
     <p *ngIf="i == step">{{breadcrumb.caption}}</p>
   </div>

@@ -8,7 +8,7 @@ function createWindow () {
     width: 600,
     height: 600,
     backgroundColor: '#ffffff',
-    icon: `file://${__dirname}/dist/assets/logo.png`,
+    icon: `${__dirname}/dist/angular-electron/assets/agrimex-logo.png`,
     webPreferences: {
       webSecurity: false
     }

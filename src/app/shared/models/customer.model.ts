@@ -6,6 +6,8 @@ export class Customer {
   invoiced: number[];
   margin: number[];
   bonus: number;
+  bonusRate: number;
+  bonusRaw: number;
   nominalArr: NominalCount[];
 
   constructor() {};

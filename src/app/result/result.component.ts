@@ -6,6 +6,7 @@ import {AccountBonuses} from "../shared/models/account-bonuses";
 import {CustomerBonus} from "../shared/models/customer-bonus";
 import {NominalCount} from "../shared/models/nominal-count.model";
 import {Router} from "@angular/router";
+import {saveAs} from "file-saver";
 
 @Component({
   selector: 'app-result',
@@ -16,6 +17,7 @@ export class ResultComponent implements OnInit {
 
   labelAccount: string = "OZ";
   labelBonus: string = "Bonus";
+  labelTotal: string = "TOTAL"
   labelsNominals: number[];
   customers: object[];
   accounts: string[];
@@ -91,5 +93,32 @@ export class ResultComponent implements OnInit {
     })
   }
 
+  download() {
+    let blob:string = '';
+    blob += this.labelAccount + this.dataService.separator + this.labelBonus + this.dataService.separator;
+    this.labelsNominals.forEach((labelNominal) => blob += labelNominal + this.dataService.separator)
+    blob += '\n';
+    this.accountBonuses.forEach((bonus) => {
+      blob += bonus.name + this.dataService.separator + bonus.totalBonuses + this.dataService.separator;
+      bonus.totalDenomination.forEach((nominal) => blob += nominal.count + this.dataService.separator);
+      blob += '\n';
+    });
+    blob += this.labelTotal + this.dataService.separator + this.totalBonus + this.dataService.separator;
+    this.totalNominals.forEach((nominal) => blob += nominal.count + this.dataService.separator);
+    console.log(blob);
+    const f = new Blob([blob], { type: 'text/csv;charset=utf-8' });
+    saveAs(f, "bonusy.csv");
+  }
 
+  print() {
+    let printContents = document.getElementById('result').innerHTML;
+    let originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
+    window.print();
+    document.body.innerHTML = originalContents;
+  }
+
+  new() {
+    this.router.navigate(['/dashboard'])
+  }
 }

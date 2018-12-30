@@ -87,7 +87,10 @@ export class DataImportComponent implements OnInit {
             customer.name = line1Arr[1];
             customer.invoiced = [];
             line1Arr.splice(line1Arr.length - this.dataService.timePeriod).forEach((invoice) => {
-              if (invoice.length > 0) customer.invoiced.push(parseInt(invoice.replace(" ","")))
+              if (invoice.length > 0) {
+                customer.invoiced.push(parseInt(invoice.replace(" ","")));
+                customer.invoiced.push(parseInt(invoice.replace(" ","")));
+              }
             });
             customer.margin = [];
             line2Arr.splice(line2Arr.length - this.dataService.timePeriod).forEach((margin) => {
